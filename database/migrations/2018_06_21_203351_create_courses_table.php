@@ -21,6 +21,8 @@ class CreateCoursesTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedInteger('level_id');
             $table->foreign('level_id')->references('id')->on('levels');
+            $table->string( 'name');
+            $table->text('description');
             $table->string('slug');
             $table->string('picture')->nullable();
             $table->enum('status', [

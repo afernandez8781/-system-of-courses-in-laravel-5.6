@@ -27,8 +27,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('last_name')->nullable();
             $table->string('slug');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('email', 128)->unique();
+            $table->string('password')->nullable();
             $table->string('picture')->nullable();
 
             //cashier columns

@@ -21,5 +21,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Student extends Model
 {
-    //
+    protected $fillable = ['user_id', 'title'];
+    public function curses () {
+    	return $this->belongsToMany(Course::class);
+    }
+
+    public function user () {
+    	return $this->belongsTo(User::class)->select('id', 'role_id', 'name', 'email');
+    }
 }
