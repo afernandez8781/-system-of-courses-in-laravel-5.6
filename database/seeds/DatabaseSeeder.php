@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
 
         factory(\App\User::class, 1)->create([
            'name' => 'admin',
-           'email' => 'admin@mail.com',
-           'password' => bcrypt('secret'),
+           'email' => 'alfredo@ceanla.com',
+           'password' => bcrypt('password'),
            'role_id' => \App\Role::ADMIN
         ])
         ->each(function (\App\User $u) {

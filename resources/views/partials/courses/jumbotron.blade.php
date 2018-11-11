@@ -1,4 +1,4 @@
-<div class="row mb-4">
+<div class="col-md-12 mb-4">
     <div class="col-md-12">
         <div class="card" style="background-image: url('{{ url('/images/jumbotron.png') }}');">
             <div class="text-white text-center d-flex align-items-center py-5 px-4 my-5">

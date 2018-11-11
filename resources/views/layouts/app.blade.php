@@ -21,30 +21,30 @@
 
 </head>
 <body>
-@include('partials.navigation')
+    @include('partials.navigation')
 
-@yield('jumbotron')
+    @yield('jumbotron')
 
-<div id="app">
+    <div id="app">
 
-    <main class="py-4">
+        <main class="py-4">
 
-    @if(session('message'))
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="alert alert-{{ session('message')[0] }}">
-                        <h4 class="alert-heading">{{ __("Mensaje") }}</h4>
-                        <p>{{ session('message')[1] }}</p>
+        @if(session('message'))
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div class="alert alert-{{ session('message')[0] }}">
+                            <h4 class="alert-heading">{{ __("Mensaje") }}</h4>
+                            <p>{{ session('message')[1] }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endif
-        @yield('content')
-    </main>
-</div>
+            @endif
+            @yield('content')
+        </main>
+    </div>
 
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
 </body>
 </html>

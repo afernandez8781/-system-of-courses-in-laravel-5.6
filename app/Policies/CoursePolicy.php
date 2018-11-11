@@ -18,4 +18,8 @@ class CoursePolicy
     public function subscribe (User $user) {
         return $user->role_id !== Role::ADMIN && ! $user->subscribed('main');
     }
+
+    public function  inscribe(User $user, Course $course){
+       return $course->students->contains($user->student->id);
+    }
 }
