@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -35,6 +36,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Course extends Model
 {
+    use SoftDeletes;
+    
     const PUBLISHED = 1;
     const PENDING = 2;
     const REJECTED = 3;
@@ -71,7 +74,7 @@ class Course extends Model
     } 
 
     public function students () {
-    	return $this->belongsToMany(Student::class);
+        return $this->belongsToMany(Student::class);
     }
 
     public function teacher () {
