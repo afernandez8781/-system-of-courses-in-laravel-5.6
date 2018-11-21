@@ -66,4 +66,5 @@ Route::group(["prefix" => "solicitude"], function() {
 Route::group(['prefix' => "teacher", "middleware" => ["auth"]], function() {
     Route::get('/courses', 'TeacherController@courses')->name('teacher.courses');
     Route::get('/students', 'TeacherController@students')->name('teacher.students');
+    Route::post('/send_message_to_student', 'TeacherController@sendMessageToStudent')->name('teacher.send_message_to_student');
 });

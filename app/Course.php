@@ -66,7 +66,7 @@ class Course extends Model
     }
 
     public function reviews () {
-    	return $this->hasMany(Review::class)->select('id', 'user_id', 'course_id', 'rating', 'comment', 'created_at');
+        return $this->hasMany(Review::class)->select('id', 'user_id', 'course_id', 'rating', 'comment', 'created_at');
     }
 
     public function requirements () {

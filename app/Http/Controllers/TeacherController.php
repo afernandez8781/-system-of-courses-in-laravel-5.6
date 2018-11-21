@@ -22,4 +22,19 @@ class TeacherController extends Controller
 		$actions = 'students.datatables.actions';
 		return \DataTables::of($students)->addColumn('actions', $actions)->rawColumns(['actions', 'courses_formatted'])->make(true);
     }
+
+    public function sendMessageToStudent () {
+    	$info = \request('info');
+    	$data = [];
+    	parse_str($info, $data);
+    	$user = User::findOrFail($data['user_id']);
+    	try {
+    		\Mail::to($user)->send(new MessageToStudent( auth()->user()->name, $data['message']));
+    		$success = true;
+    	} catch (\Exception $exception) {
+    		$success = false;
+    	}
+
+    	return response()->json(['res' => $success]);
+    }
 }
