@@ -7,6 +7,9 @@ use App\Mail\NewStudentInCourse;
 use App\Course;
 use App\Review;
 
+use App\Http\Requests\CourseRequest;
+use App\Helpers\Helper;
+
 class CourseController extends Controller
 {
     public function show (Course $course) {
@@ -56,5 +59,20 @@ class CourseController extends Controller
             "comment" => request('message')
         ]);
         return back()->with('message', ['success', __('Muchas gracias por valorar el curso')]);
+    }
+
+    public function create () {
+        $course = new Course;
+        $btnText = __("Enviar curso para revisión");
+        return view('courses.form', compact('course', 'btnText'));
+    }
+
+    public function store (CourseRequest $course_request) {
+        $picture = Helper::uploadFile('picture', 'courses');
+        $course_request->merge(['picture' => $picture]);
+        $course_request->merge(['teacher_id' => auth()->user()->teacher->id]);
+        $course_request->merge(['status' => Course::PENDING]);
+        Course::create($course_request->input());
+        return back()->with('message', ['success', __('Curso enviado correctamente, recibirá un correo de confirmación')]);
     }
 }
