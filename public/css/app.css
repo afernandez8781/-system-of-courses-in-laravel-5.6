@@ -10598,7 +10598,7 @@ main {
 }
 
 header .navbar-laravel {
-  background-color: #C0355D;
+  background-color: #8E24AA;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
@@ -10640,7 +10640,7 @@ header .navbar-laravel .navbar-brand {
 
 .btn-course,
 .btn-course:hover {
-  background-color: #C0355D;
+  background-color: #8E24AA;
   color: #fff;
 }
 
@@ -10657,30 +10657,30 @@ header .navbar-laravel .navbar-brand {
 }
 
 .badge-box > i {
-  background-color: #C0355D !important;
+  background-color: #8E24AA !important;
 }
 
 .page-item.active .page-link {
   z-index: 1;
   color: #fff;
-  background-color: #C0355D;
+  background-color: #8E24AA;
   border-color: #1b1e21;
 }
 
 .page-link,
 .page-link:hover {
-  color: #C0355D;
+  color: #8E24AA;
 }
 
 .btn-subscribe,
 .btn-subscribe:hover {
-  background-color: #C0355D !important;
+  background-color: #8E24AA !important;
   color: #fff;
   font-size: 24px !important;
 }
 
 .bg-light {
-  border: 1px solid #C0355D;
+  border: 1px solid #8E24AA;
   text-align: center;
 }
 
